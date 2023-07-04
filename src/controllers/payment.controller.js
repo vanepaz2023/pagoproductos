@@ -87,7 +87,7 @@ console.log("ENTORNO",process.env.ACCESS_TOKEN);
 };
 
 export const receiveWebhook = async (req, res) => {
- console.log("recibe webhook",req);
+
   try {
     const payment = req.query;
 
@@ -97,9 +97,8 @@ export const receiveWebhook = async (req, res) => {
          console.log("Guardo en BD",data.body.status_detail);
      
          const connection = await getConnection();
-    console.log("CONEXION", connection.database,
-    connection.host,connection.password,
-    connection.user
+    console.log("CONEXION", connection.db_url,
+
     );
          connection.connect()
       .then(() => {
