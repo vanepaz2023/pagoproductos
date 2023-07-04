@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 
    
 import  pg from 'pg';
-import config from "../../config.js";
+
 var orden='';
 
 export const createOrder = async (req, res) => {
