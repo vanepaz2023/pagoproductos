@@ -1,8 +1,10 @@
 import mercadopage from "mercadopago";
 import dotenv from 'dotenv';
 import { config } from 'dotenv';
-import {getConnection} from './../database/database.js'
 
+   
+import  pg from 'pg';
+import config from "../../config.js";
 var orden='';
 
 export const createOrder = async (req, res) => {
@@ -95,8 +97,12 @@ export const receiveWebhook = async (req, res) => {
       const data = await mercadopage.payment.findById(payment["data.id"]);
        console.log("Guardo en BD",data.body.status);
          console.log("Guardo en BD",data.body.status_detail);
-     
-         const connection = await getConnection();
+  
+         
+         const connection = new pg.Pool({
+             connectionString:'postgres://postgress:q7In0K7ru4K2GZ0VBCWD6QJEV0ph5NzU@dpg-cihnjpdgkuvojja6ed90-a.ohio-postgres.render.com/paybasedato23',
+             ssl: true
+         });
     
          connection.connect()
       .then(() => {
