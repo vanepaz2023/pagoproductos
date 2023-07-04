@@ -11,4 +11,5 @@ export default {
     user: process.env.DB_USER || "",
     password: process.env.DB_PASSWORD || "",
     port: process.env.PORT || "",
+    db_url: process.env.DB_URL || ""
 };

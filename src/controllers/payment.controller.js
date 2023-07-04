@@ -69,7 +69,7 @@ console.log("ENTORNO",process.env.ACCESS_TOKEN);
            },
          ], */
        //  notification_url: "https://0616-2803-cf00-7f4-2c00-61b8-78fe-969e-b10c.ngrok-free.app/webhook",
-     notification_url: "https://mercadopagos.onrender.com/webhook",
+     notification_url: "https://pagos-h22l.onrender.com/webhook",
       back_urls: {
         success: "https://san2025chez.github.io/new-ecomerce/",
         // pending: "https://e720-190-237-16-208.sa.ngrok.io/pending",
@@ -87,7 +87,7 @@ console.log("ENTORNO",process.env.ACCESS_TOKEN);
 };
 
 export const receiveWebhook = async (req, res) => {
- // console.log("recibe webhook",req);
+ console.log("recibe webhook",req);
   try {
     const payment = req.query;
 
