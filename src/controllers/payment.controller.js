@@ -107,8 +107,8 @@ export const receiveWebhook = async (req, res) => {
          connection.connect()
       .then(() => {
         console.log('Conexión exitosa a la base de datos PostgreSQL');
-        connection.query('INSERT INTO pagos (id, orden, status) VALUES ($1, $2, $3)',
-        ["richisito", orden, data.body.status_detail], (error, result) => {
+        connection.query('INSERT INTO pagos (orden, status) VALUES ($1, $2, $3)',
+        [orden, data.body.status_detail], (error, result) => {
          if (error) {
            console.error('Error al guardar datos:', error);
            res.status(500).json({ error: 'Error al guardar datos' });
