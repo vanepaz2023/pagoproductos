@@ -1,8 +1,6 @@
 import mercadopage from "mercadopago";
 import dotenv from 'dotenv';
 import { config } from 'dotenv';
-
-   
 import  pg from 'pg';
 
 var orden='';
@@ -107,7 +105,7 @@ export const receiveWebhook = async (req, res) => {
          connection.connect()
       .then(() => {
         console.log('Conexión exitosa a la base de datos PostgreSQL');
-        connection.query('INSERT INTO pagos (orden, status) VALUES ($1, $2, $3)',
+        connection.query('INSERT INTO pagos (orden, status) VALUES ($1, $2)',
         [orden, data.body.status_detail], (error, result) => {
          if (error) {
            console.error('Error al guardar datos:', error);
