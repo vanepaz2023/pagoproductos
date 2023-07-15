@@ -10,7 +10,7 @@ export const createOrder = async (req, res) => {
   orden = req.body.orden;
   dotenv.config();
   config();
-console.log("ENTORNO",process.env.ACCESS_TOKEN);
+
   mercadopage.configure({
 
     access_token: process.env.ACCESS_TOKEN
