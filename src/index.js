@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
     origin:['https://productosnutricionales.com.ar']
-})); // Habilitar CORS para todas las solicitudes
+}));
 app.use(morgan("dev"));
 // Configura la conexión a la base de datos PostgreSQL
 
